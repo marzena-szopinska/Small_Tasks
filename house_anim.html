@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Domek</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        span {
+            margin-top: 2rem;
+            margin-left: 2rem;
+            padding: 1rem;
+            background-color: gray;
+            border: 2px solid black;
+            display: inline-block;
+            text-align: center;
+            transition: all .2s ease-out;
+        }
+
+        div {
+            position: absolute;
+            top: 90%;
+            left: 0;
+        }
+
+
+
+        span:hover {
+            background-color: brown;
+            color: white;
+        }
+
+         span:hover ~ div {
+            width: 20px;
+            height: 20px;
+            background-color: gold;
+        }
+
+        .bottom {
+            width: 0;
+            height: 0;
+            transition: all .7s ease;
+            z-index: 1000;
+        }
+
+        .top {
+            width: 0;
+            height: 0;
+            transition: all .7s ease .3s;
+            z-index: 1;
+        }
+
+        .window-small, .window {
+            width: 0;
+            height: 0;
+            transition: all .7s ease .6s;
+            z-index: 1500;
+        }
+
+        .door {
+            width: 0;
+            height: 0;
+            transition: all .7s ease .9s;
+            z-index: 1500;
+        }
+
+        .chimney {
+            width: 0;
+            height: 0;
+            transition: all .7s ease 1.2s;
+            z-index: 0;
+        }
+
+        span:hover ~ .bottom {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50vh;
+            height: 30vh;
+            background-color: red;
+        }
+
+
+        span:hover ~ .top {
+            top: calc(50vh - 15vh);
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: calc(50vh / 1.41 );
+            height: calc(50vh / 1.41 );
+            background-color: brown;
+        }
+
+        span:hover ~ .window {
+            top: calc(50% - 6vh);
+            left: calc(50% - 12vh);
+            transform: translate(-50%, -50%);
+            width: 12vh;
+            height: 10vh;
+            background-color: orange;
+        }
+
+        span:hover ~ .window-small {
+            top: calc(50% - 6vh);
+            left: calc(50% + 12vh);
+            transform: translate(-50%, -50%);
+            width: 12vh;
+            height: 10vh;
+            background-color: orange;
+        }
+
+        span:hover ~ .door {
+            top: calc(50% + 7.5vh);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12vh;
+            height: 15vh;
+            background-color: black;
+        }
+
+        span:hover ~ .chimney {
+            top: calc(50% - 25vh);
+            left: calc(50% + 15vh);
+            transform: translate(-50%, -50%);
+            width: 4vh;
+            height: 10vh;
+            background-color: green;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <span>BUDUJEMY</span>
+    <div class='bottom'></div>
+    <div class='top'></div>
+    <div class='window-small'></div>
+    <div class='window'></div>
+    <div class='door'></div>
+    <div class='chimney'></div>
+</body>
+
+</html>
